@@ -1,4 +1,7 @@
-# App Node     
+# API de videos feita em Node.js
+
+Aplicação criada em conjunto com a Rocketseat, link do video:   
+https://www.youtube.com/watch?v=hHM-hr9q4mo&t=587s
 
 # Bibliotecas:
 
@@ -25,10 +28,21 @@ Comando do node para atualizar sempre que salvar o projeto:
 ```import {} from 'node:crypto'```
 
 
-# Métodos para API:
+# Métodos para API (CRUD - Create, Read, Update, Delete):
 
- POST - Para criação de um recurso  
+ POST (Create) - Método para criação de um recurso  
  *POST localhost:3333/videos*
 
- DELETE - Para deletar um registro   
+ GET (Read) - Método para solicitar a representação de um recurso espefico
+ *GET localhost:3333/videos/1*
+
+ PUT (Update) - Método para alteração
+ *PUT localhost:3333/videos*
+
+ PATH (Update) - Método para alterar algo em especifico de um registro
+ *PATH localhost:3333/videos/1*
+
+ DELETE (Delete) - Método para deletar um registro   
  *DELETE localhost:3333/videos/1*
+
+
