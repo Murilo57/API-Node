@@ -33,13 +33,13 @@ Comando do node para atualizar sempre que salvar o projeto:
  POST (Create) - Método para criação de um recurso  
  *POST localhost:3333/videos*
 
- GET (Read) - Método para solicitar a representação de um recurso espefico
+ GET (Read) - Método para solicitar a representação de um recurso espefico  
  *GET localhost:3333/videos/1*
 
- PUT (Update) - Método para alteração
+ PUT (Update) - Método para alteração  
  *PUT localhost:3333/videos*
 
- PATH (Update) - Método para alterar algo em especifico de um registro
+ PATH (Update) - Método para alterar algo em especifico de um registro  
  *PATH localhost:3333/videos/1*
 
  DELETE (Delete) - Método para deletar um registro   
