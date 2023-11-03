@@ -5,6 +5,10 @@ export class DatabaseMemory {
     //# serve para criar uma informação privada
     #videos = new Map()
 
+    list(video) {
+        const viDid        
+    }
+
     /* Estrutura de dados:
         Set: É como se fosse um array em JavaScript, o bom dele é não aceitar valores duplicados
 
@@ -13,17 +17,20 @@ export class DatabaseMemory {
 
     //Método para criar video 
     create(video) {
-        const videoId = random
-
-
-
+        //randomUUID ira criar um ID unico 
+        const videoId = randomUUID()
 
         //Método set do MAP, por padrão ele recebe 2 parametros, uma chave 'key' ou ID e um valor.
-        this.#videos.set(1,)
+        this.#videos.set(videoId, video)
     }
 
     //Método para atualizar que recebe o ID do video
     update(id ,video) {
-        this.#videos.push(video)
+        this.#videos.set(id, video)
+    }
+
+    //Método para deletar um registro pelo ID
+    delete(id) {
+      this.#videos.delete(id)
     }
 }

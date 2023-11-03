@@ -28,16 +28,22 @@ server.post('/videos', () => {
     return ''
 })
 
-//Rota hello
+//Método para requisição
 server.get('/videos', () => {
     return ''
 })
 
-//Rota com id
+//Método para gravar um novo registro
+server.post('/videos/:id', () => {
+    return ''
+})
+
+//Método para alterar um registro
 server.put('/videos/:id', () => {
     return ''
 })
 
+//Método para deletar um registro
 server.delete('/videos/:id', () => {
     return ''
 })
