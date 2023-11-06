@@ -9,6 +9,8 @@ export class DatabaseMemory {
         const viDid        
     }
 
+    aass
+
     /* Estrutura de dados:
         Set: É como se fosse um array em JavaScript, o bom dele é não aceitar valores duplicados
 
