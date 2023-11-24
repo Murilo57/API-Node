@@ -6,10 +6,8 @@ export class DatabaseMemory {
     #videos = new Map()
 
     list() {
-        return this.#videos.values()
+        return Array.from(this.#videos.values())
     }
-
-    aass
 
     /* Estrutura de dados:
         Set: É como se fosse um array em JavaScript, o bom dele é não aceitar valores duplicados

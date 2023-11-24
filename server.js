@@ -25,27 +25,45 @@ const server = fastify()
 
 const database = new DatabaseMemory()
 
+// Request Body (Corpo da requisição)
+
 //função onde pego uma rota após a barra e passo uma função para retorno
 server.post('/videos', (request, reply) => {
+    const { title, description, duration } = request.body
+    
     database.create({ 
-        title: 'Video 01',
-        description: 'Esse é o video 01',
-        duration: 180,
+        title: title,
+        description: description,
+        duration: duration,
     })
 
-    console.log(database.list())
+    // console.log(database.list())
 
     return reply.status(201).send() //Codigo 201 significa q algo foi criado
 })    
 
 //Método para requisição
 server.get('/videos', () => {
-    return ''
+   const videos = database.list()
+
+  console.log(videos)
+
+   return videos
 })
 
-//Método para alterar um registro
-server.put('/videos/:id', () => {
-    return ''
+//Método para alterar(atualizar) um registro
+server.put('/videos/:id', (request, reply) => {
+    const videoID = request.params.id
+    const { title, description, duration } = request.body    
+
+    database.update(videoId, {
+        title,
+        description,
+        duration
+
+    })
+
+    return reply.status(204).send() //Significa uma resposta que obteve sucesso porém não teve conteudo
 })
 
 //Método para deletar um registro

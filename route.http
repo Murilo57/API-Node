@@ -1,1 +1,14 @@
 POST http://localhost:3333/videos
+//Especificando o tipo do conteudo 
+Content-type: application/json
+
+//Objeto para JSON
+{
+    "title": "Video 01",
+    "description": "Esse é o video 01",
+    "duration": "180"
+}
+
+###
+
+GET http://localhost:3333/videos
