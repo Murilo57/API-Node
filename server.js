@@ -18,23 +18,28 @@ server.listen(3333)
 
 //Biblioteca para criar API
 import {fastify} from 'fastify'
-import { DatabaseMemory} from '/database-memory.js'
+import { DatabaseMemory} from './database-memory.js'
 
 //Função para criar servidor
 const server = fastify()
 
+const database = new DatabaseMemory()
+
 //função onde pego uma rota após a barra e passo uma função para retorno
-server.post('/videos', () => {
-    return ''
-})
+server.post('/videos', (request, reply) => {
+    database.create({ 
+        title: 'Video 01',
+        description: 'Esse é o video 01',
+        duration: 180,
+    })
+
+    console.log(database.list())
+
+    return reply.status(201).send() //Codigo 201 significa q algo foi criado
+})    
 
 //Método para requisição
 server.get('/videos', () => {
-    return ''
-})
-
-//Método para gravar um novo registro
-server.post('/videos/:id', () => {
     return ''
 })
 

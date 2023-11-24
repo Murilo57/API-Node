@@ -5,8 +5,8 @@ export class DatabaseMemory {
     //# serve para criar uma informação privada
     #videos = new Map()
 
-    list(video) {
-        const viDid        
+    list() {
+        return this.#videos.values()
     }
 
     aass
