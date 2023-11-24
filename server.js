@@ -10,7 +10,7 @@ const server = createServer((request, response) => {
     response.write('teste')
 
     return response.end()
-})
+})a
 
 server.listen(3333)
 
@@ -53,22 +53,25 @@ server.get('/videos', () => {
 
 //Método para alterar(atualizar) um registro
 server.put('/videos/:id', (request, reply) => {
-    const videoID = request.params.id
+    const videoId = request.params.id
     const { title, description, duration } = request.body    
 
     database.update(videoId, {
-        title,
-        description,
-        duration
-
+        title: title,
+        description: description,
+        duration: duration,
     })
 
     return reply.status(204).send() //Significa uma resposta que obteve sucesso porém não teve conteudo
 })
 
 //Método para deletar um registro
-server.delete('/videos/:id', () => {
-    return ''
+server.delete('/videos/:id', (request, reply) => {
+    const videoId = request.params.id 
+
+    database.delete(videoId)
+
+    return reply.status(204)
 })
 
 
