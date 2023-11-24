@@ -5,8 +5,9 @@ export class DatabaseMemory {
     //# serve para criar uma informação privada
     #videos = new Map()
 
-    list() {
-        return Array.from(this.#videos.entries()).map((videoArray) => {            
+    list(search) {
+        return Array.from(this.#videos.entries())
+        .map((videoArray) => {            
             const id = videoArray [0]
             const data = videoArray[1]
         
@@ -14,6 +15,15 @@ export class DatabaseMemory {
             id,
             ...data,
         }        
+        })
+        //Função para filtrar pelo que esta incluso na variavel 'search'
+        .filter(video => {
+            if (search) {
+                return this.#videos.title.includes(search)
+            }
+
+
+            return true
         })
     }
 

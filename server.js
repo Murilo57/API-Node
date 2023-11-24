@@ -27,7 +27,7 @@ const database = new DatabaseMemory()
 
 // Request Body (Corpo da requisição)
 
-//função onde pego uma rota após a barra e passo uma função para retorno
+//função onde pego uma rota após a barra ae passo uma função para retorno
 server.post('/videos', (request, reply) => {
     const { title, description, duration } = request.body
     
@@ -43,10 +43,10 @@ server.post('/videos', (request, reply) => {
 })    
 
 //Método para requisição
-server.get('/videos', () => {
-   const videos = database.list()
+server.get('/videos', (request) => {
+    const search = request.query.search
 
-  console.log(videos)
+   const videos = database.list(search)   
 
    return videos
 })

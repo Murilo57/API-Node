@@ -4,14 +4,14 @@ Content-type: application/json
 
 //Objeto para JSON
 {
-    "title": "Video 01",
+    "title": "Video node",
     "description": "Esse é o video 01",
     "duration": "180"
 }
 
 ###
 
-GET http://localhost:3333/videos
+GET http://localhost:3333/videos?search=node
 
 ###
 
