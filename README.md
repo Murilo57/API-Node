@@ -46,3 +46,8 @@ Comando do node para atualizar sempre que salvar o projeto:
  *DELETE localhost:3333/videos/1*
 
 
+# Banco de dados PostgreSQL
+
+Repositório de referência:
+[Postgres](https://github.com/porsager/postgres)
+

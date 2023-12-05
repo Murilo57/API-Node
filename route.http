@@ -2,10 +2,9 @@ POST http://localhost:3333/videos
 //Especificando o tipo do conteudo 
 Content-type: application/json
 
-//Objeto para JSON
 {
-    "title": "Video node",
-    "description": "Esse é o video 01",
+    "title": "teste1",
+    "description": "teste12",
     "duration": "180"
 }
 
@@ -19,10 +18,9 @@ PUT http://localhost:3333/videos/1380d779-4741-4769-a173-1702a29a46cf
 //Especificando o tipo do conteudo 
 Content-type: application/json
 
-//Objeto para JSON
 {
-    "title": "Video 03",
-    "description": "Esse é o video 01",
+    "title": "Teste1 update",
+    "description": "Teste1 update",
     "duration": "180"
 }
 

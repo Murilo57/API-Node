@@ -27,7 +27,7 @@ const database = new DatabaseMemory()
 
 // Request Body (Corpo da requisição)
 
-//função onde pego uma rota após a barra ae passo uma função para retorno
+//Método para gravar um novo registro
 server.post('/videos', (request, reply) => {
     const { title, description, duration } = request.body
     
@@ -36,13 +36,12 @@ server.post('/videos', (request, reply) => {
         description: description,
         duration: duration,
     })
-
     // console.log(database.list())
 
-    return reply.status(201).send() //Codigo 201 significa q algo foi criado
+    return reply.status(201).send() //Sucesso no retorno
 })    
 
-//Método para requisição
+//Método para leitura
 server.get('/videos', (request) => {
     const search = request.query.search
 
@@ -51,7 +50,7 @@ server.get('/videos', (request) => {
    return videos
 })
 
-//Método para alterar(atualizar) um registro
+//Método para update
 server.put('/videos/:id', (request, reply) => {
     const videoId = request.params.id
     const { title, description, duration } = request.body    
@@ -62,7 +61,7 @@ server.put('/videos/:id', (request, reply) => {
         duration: duration,
     })
 
-    return reply.status(204).send() //Significa uma resposta que obteve sucesso porém não teve conteudo
+    return reply.status(204).send() 
 })
 
 //Método para deletar um registro
@@ -73,7 +72,6 @@ server.delete('/videos/:id', (request, reply) => {
 
     return reply.status(204)
 })
-
 
 //Na biblioteca Fastify ao invés de passar a porta tem que passar como um objeto
 server.listen({
