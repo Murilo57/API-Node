@@ -51,3 +51,4 @@ Comando do node para atualizar sempre que salvar o projeto:
 Repositório de referência:
 [Postgres](https://github.com/porsager/postgres)
 
+## Comando para criação do banco de dados no arquivo create-table.js

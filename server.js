@@ -18,20 +18,23 @@ server.listen(3333)
 
 //Biblioteca para criar API
 import {fastify} from 'fastify'
-import { DatabaseMemory} from './database-memory.js'
+// import { DatabaseMemory} from './database-memory.js' < BANCO DE DADOS EM MEMORIA
+import {DatabasePostgres} from './database-postgres.js'
 
 //Função para criar servidor
 const server = fastify()
 
-const database = new DatabaseMemory()
+// Banco de dados em memoria \/
+// const database = new DatabaseMemory()
+const database = new DatabasePostgres()
 
 // Request Body (Corpo da requisição)
 
 //Método para gravar um novo registro
-server.post('/videos', (request, reply) => {
+server.post('/videos', async (request, reply) => {
     const { title, description, duration } = request.body
     
-    database.create({ 
+    await database.create({ 
         title: title,
         description: description,
         duration: duration,
@@ -42,10 +45,10 @@ server.post('/videos', (request, reply) => {
 })    
 
 //Método para leitura
-server.get('/videos', (request) => {
+server.get('/videos',async (request) => {
     const search = request.query.search
 
-   const videos = database.list(search)   
+   const videos = await database.list(search)   
 
    return videos
 })
