@@ -39,7 +39,7 @@ server.post('/videos', async (request, reply) => {
         description: description,
         duration: duration,
     })
-    // console.log(database.list())
+    console.log(database.list())
 
     return reply.status(201).send() //Sucesso no retorno
 })    
