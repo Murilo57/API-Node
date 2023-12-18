@@ -39,8 +39,6 @@ server.post('/videos', async (request, reply) => {
         description: description,
         duration: duration,
     })
-    console.log(database.list())
-
     return reply.status(201).send() //Sucesso no retorno
 })    
 
@@ -54,11 +52,12 @@ server.get('/videos',async (request) => {
 })
 
 //Método para update
-server.put('/videos/:id', (request, reply) => {
+server.put('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
     const { title, description, duration } = request.body    
 
-    database.update(videoId, {
+    
+    await database.update(videoId, {
         title: title,
         description: description,
         duration: duration,
@@ -68,15 +67,15 @@ server.put('/videos/:id', (request, reply) => {
 })
 
 //Método para deletar um registro
-server.delete('/videos/:id', (request, reply) => {
+server.delete('/videos/:id',async  (request, reply) => {
     const videoId = request.params.id 
 
-    database.delete(videoId)
+    await database.delete(videoId)
 
     return reply.status(204)
 })
 
-//Na biblioteca Fastify ao invés de passar a porta tem que passar como um objeto
+//Portas de uso em produção, caso não encontrar a porta do primeiro caminho ira usar a local 3333
 server.listen({
-    port: 3333,
+    port: process.env.PORT ?? 3333,
 })
