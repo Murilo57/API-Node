@@ -1,23 +1,29 @@
-POST http://localhost:3333/videos
-//Especificando o tipo do conteudo 
-Content-type: application/json
-
-###
-
-GET http://localhost:3333/videos?search=Video
-
-###
-
-PUT http://localhost:3333/videos/c87e3f10-82ca-44b3-9036-a324199ae953
+POST https://api-node-with-postqgresql.onrender.com/videos
 //Especificando o tipo do conteudo 
 Content-type: application/json
 
 {
-    "title": "Video 2 update",
-    "description": "Teste1 update",
+    "title": "Video Node Finalizado!",
+    "description": "Node na veia",
+    "duration": 180
+}
+
+###
+
+GET https://api-node-with-postqgresql.onrender.com/videos?search=Node
+
+###
+
+PUT https://api-node-with-postqgresql.onrender.com/videos/c87e3f10-82ca-44b3-9036-a324199ae953
+//Especificando o tipo do conteudo 
+Content-type: application/json
+
+{
+    "title": "Api Node2",
+    "description": "Api node",
     "duration": "180"
 }
 
 ###
 
-DELETE http://localhost:3333/videos/c87e3f10-82ca-44b3-9036-a324199ae953
+DELETE https://api-node-with-postqgresql.onrender.com/videos/c87e3f10-82ca-44b3-9036-a324199ae953

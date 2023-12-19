@@ -78,5 +78,5 @@ server.delete('/videos/:id',async  (request, reply) => {
 //Portas de uso em produção, caso não encontrar a porta do primeiro caminho ira usar a local 3333
 server.listen({
     host: '0.0.0.0', //Host obrigatorio na documentação do Render
-    port: process.env.PORT ?? 3333
+    port: process.env.PORT ?? 3333,
 })
